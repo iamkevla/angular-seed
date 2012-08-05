@@ -2,43 +2,44 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Unit Test Runner</title>
-	<link rel="stylesheet" href="../lib/jasmine/jasmine.css" />
+	<link rel="shortcut icon" type="image/png" href="lib/jasmine-1.2.0/jasmine_favicon.png">
+  <link rel="stylesheet" type="text/css" href="lib/jasmine-1.2.0/jasmine.css">
 </head>
 <body>
+  
+  <script type="text/javascript" src="lib/jasmine-1.2.0/jasmine.js"></script>
+  <script type="text/javascript" src="lib/jasmine-1.2.0/jasmine-html.js"></script>
+  <script src="http://code.angularjs.org/1.0.0rc2/angular-1.0.0rc2.js"></script>
+  <script src="http://code.angularjs.org/1.0.0rc2/angular-mocks-1.0.0rc2.js"></script> 
+  <script src="controllersSpec.js" ></script>
+  <script src="../../app/js/app.js"></script>
+   <script type="text/javascript">
+      (function() {
+        var jasmineEnv = jasmine.getEnv();
+        jasmineEnv.updateInterval = 1000;
 
-<script src="http://code.angularjs.org/1.0.0rc2/angular-1.0.0rc2.js"></script>
-<script src="https://raw.github.com/pivotal/jasmine/master/lib/jasmine-core/jasmine.js"></script>
-<script src="https://raw.github.com/pivotal/jasmine/master/lib/jasmine-core/jasmine-html.js"></script>
-<script src="http://code.angularjs.org/1.0.0rc2/angular-mocks-1.0.0rc2.js"></script> 
-<script src="controllersSpec.js" ></script>
-<script src="../../app/js/app.js"></script>
- <script type="text/javascript">
-    (function() {
-      var jasmineEnv = jasmine.getEnv();
-      jasmineEnv.updateInterval = 1000;
+        var trivialReporter = new jasmine.TrivialReporter();
 
-      var trivialReporter = new jasmine.TrivialReporter();
+        jasmineEnv.addReporter(trivialReporter);
 
-      jasmineEnv.addReporter(trivialReporter);
+        jasmineEnv.specFilter = function(spec) {
+          return trivialReporter.specFilter(spec);
+        };
 
-      jasmineEnv.specFilter = function(spec) {
-        return trivialReporter.specFilter(spec);
-      };
+        var currentWindowOnload = window.onload;
 
-      var currentWindowOnload = window.onload;
+        window.onload = function() {
+          if (currentWindowOnload) {
+            currentWindowOnload();
+          }
+          execJasmine();
+        };
 
-      window.onload = function() {
-        if (currentWindowOnload) {
-          currentWindowOnload();
+        function execJasmine() {
+          jasmineEnv.execute();
         }
-        execJasmine();
-      };
 
-      function execJasmine() {
-        jasmineEnv.execute();
-      }
-
-    })();
-  </script>
+      })();
+    </script>
 </body>
 </html>
