@@ -4,10 +4,10 @@
 
 describe('Testing a controller with service', function() {
 
-    var ctrl;
+    var scope, ctrl;
 
-    beforeEach(inject(function($controller) {
-        ctrl = $controller(TestCtrl);
+    beforeEach(inject(function( $controller ) {
+        ctrl = $controller(TestCtrl, {$scope: scope, $location: location});
     }));
 
     it('$location dependency should be injected', function() {
@@ -15,19 +15,26 @@ describe('Testing a controller with service', function() {
     });
 });
 
-describe('MyCtrl1', function(){
-  var scope, ctrl;
+
+describe('MainCtrl', function(){
+  
+    var scope, ctrl;
 
     beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
       scope = $rootScope.$new();
-      ctrl = $controller(MyCtrl1, {$scope: scope});
+      ctrl = $controller(MainCtrl, {$scope: scope});
     }));
 
+    it('should have a greeting', function() {
+      expect(scope.greeting).toEqual('Hello from Kevla');
+    });
 
-  it('should have a greeting', function() {
-    //spec body
-    expect(scope.greeting).toEqual('Hello from Kevla');
-  });
+    it('should have yourname default to ""', function(){
+      expect(scope.yourname).toEqual('');
+    });
+
+
+
 });
 
 

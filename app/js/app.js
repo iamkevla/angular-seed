@@ -5,6 +5,8 @@ function TestCtrl($location) {
 	    this.location = $location;
 }
 
-function MyCtrl1($scope) {
+function MainCtrl($scope) {
+	// initialise
 	$scope.greeting = 'Hello from Kevla';
+	$scope.yourname = '';
 }
