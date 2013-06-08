@@ -5,14 +5,14 @@
 
 
 // base path, that will be used to resolve files and exclude
-basePath = '../'
+basePath = '../';
 
 // list of files / patterns to load in the browser
 files = [
   JASMINE,
   JASMINE_ADAPTER,
-  'http://code.angularjs.org/1.0.0rc2/angular-1.0.0rc2.js',
-  'http://code.angularjs.org/1.0.0rc2/angular-mocks-1.0.0rc2.js',
+  'http://code.angularjs.org/1.0.7/angular.min.js',
+  'http://code.angularjs.org/1.0.7/angular-mocks.js',
   'app/js/app.js',
   'test/unit/*Spec.js'
 ];
@@ -38,7 +38,7 @@ colors = true;
 logLevel = LOG_INFO;
 
 // enable / disable watching file and executing tests whenever any file changes
-autoWatch = true;
+autoWatch = false;
 
 // Start these browsers, currently available:
 // - Chrome
@@ -47,7 +47,7 @@ autoWatch = true;
 // - Opera
 // - Safari
 // - PhantomJS
-browsers = ['Chrome'];
+browsers = ['PhantomJS'];
 
 // Auto run tests on start (when browsers are captured) and exit
-singleRun = false;
+singleRun = true;
