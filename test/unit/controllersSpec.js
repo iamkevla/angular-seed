@@ -37,4 +37,6 @@ describe('MainCtrl', function(){
       expect(location.absUrl()).toBe('/angular-seed/app/');
     });
 
+
+
 });

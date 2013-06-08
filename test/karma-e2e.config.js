@@ -10,11 +10,11 @@ urlRoot = '/__karma__/';
 
 reporters = ['progress'];
 
-autoWatch = false;
+autoWatch = true;
 
 browsers = ['PhantomJS'];
 
-singleRun = true;
+singleRun = false;
 
 proxies = {
   '/': 'http://localhost/'

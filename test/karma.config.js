@@ -38,7 +38,7 @@ colors = true;
 logLevel = LOG_INFO;
 
 // enable / disable watching file and executing tests whenever any file changes
-autoWatch = false;
+autoWatch = true;
 
 // Start these browsers, currently available:
 // - Chrome
@@ -50,4 +50,4 @@ autoWatch = false;
 browsers = ['PhantomJS'];
 
 // Auto run tests on start (when browsers are captured) and exit
-singleRun = true;
+singleRun = false;
