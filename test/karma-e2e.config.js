@@ -8,7 +8,13 @@ files = [
 
 urlRoot = '/__karma__/';
 
-reporters = ['progress'];
+reporters = ['dots','junit'];
+
+junitReporter = {
+      // will be resolved to basePath (in the same way as files/exclude patterns)
+      outputFile: 'test/e2e.xml',
+      suite: 'e2e'
+};
 
 autoWatch = true;
 
