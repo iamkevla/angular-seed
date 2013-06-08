@@ -11,9 +11,8 @@ urlRoot = '/__karma__/';
 reporters = ['dots','junit'];
 
 junitReporter = {
-      // will be resolved to basePath (in the same way as files/exclude patterns)
-      outputFile: 'test/e2e.xml',
-      suite: 'e2e'
+  outputFile: 'test_out/e2e.xml',
+  suite: 'e2e'
 };
 
 autoWatch = true;
