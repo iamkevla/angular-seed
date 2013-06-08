@@ -14,9 +14,9 @@ fi
 karma start test/karma.config.js \
   --single-run \
   --browsers="$BROWSERS" \
-  --reporters="progress" 
+  --reporters="dots,junit" 
 
 karma start test/karma-e2e.config.js \
   	--single-run \
   --browsers="$BROWSERS" \
-  --reporters="progress" 
+  --reporters="dots.junit" 
