@@ -1,13 +1,12 @@
 'use strict';
 
 /* jasmine specs for controllers go here */
-
 describe('Testing a controller with service', function() {
 
     var scope, ctrl;
 
     beforeEach(inject(function( $controller ) {
-        ctrl = $controller(TestCtrl, {$scope: scope, $location: location});
+        ctrl = $controller( TestCtrl, {$scope: scope, $location: location});
     }));
 
     it('$location dependency should be injected', function() {
@@ -15,27 +14,27 @@ describe('Testing a controller with service', function() {
     });
 });
 
-
 describe('MainCtrl', function(){
   
     var scope, ctrl;
 
-    beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
+    beforeEach(inject(function(_$httpBackend_, $rootScope, $controller, $location ) {
+      location = {};
+      location.absUrl = function(){ return '/angular-seed/app/'; };
       scope = $rootScope.$new();
-      ctrl = $controller(MainCtrl, {$scope: scope});
+      ctrl = $controller( MainCtrl, {$scope: scope, $location: location });
     }));
 
     it('should have a greeting', function() {
-      expect(scope.greeting).toEqual('Hello from Kevla');
+      expect(scope.greeting).toBe('Hello from Kevla');
     });
 
     it('should have yourname default to ""', function(){
-      expect(scope.yourname).toEqual('');
+      expect(scope.yourname).toBe('');
     });
 
-
+    it('should be able to get absolute url from mocked location', function(){
+      expect(location.absUrl()).toBe('/angular-seed/app/');
+    });
 
 });
-
-
-
