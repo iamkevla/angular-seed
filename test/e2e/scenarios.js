@@ -5,7 +5,7 @@
 describe('my app', function() {
 
   beforeEach(function() {
-    browser().navigateTo('/angular-seed/app/index.html');
+    browser().navigateTo('/app/index.html');
   });
 
   it ( 'should have a greeting - Hello from Kevla', function() {

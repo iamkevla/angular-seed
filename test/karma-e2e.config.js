@@ -17,10 +17,10 @@ junitReporter = {
 
 autoWatch = true;
 
-browsers = ['PhantomJS'];
+browsers = ['Chrome'];
 
 singleRun = false;
 
 proxies = {
-  '/': 'http://localhost/'
+  '/': 'http://localhost:8000/'
 };
