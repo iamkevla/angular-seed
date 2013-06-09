@@ -17,7 +17,7 @@ junitReporter = {
 
 autoWatch = true;
 
-browsers = ['Chrome'];
+browsers = ['PhantomJS'];
 
 singleRun = false;
 
