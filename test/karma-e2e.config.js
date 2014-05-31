@@ -1,26 +1,40 @@
-basePath = '../';
+module.exports = function(config) {
+  'use strict';
+  config.set({
 
-files = [
-  ANGULAR_SCENARIO,
-  ANGULAR_SCENARIO_ADAPTER,
-  'test/e2e/*.js'
-];
+    basePath : '../',
 
-urlRoot = '/__karma__/';
+    // testing framework to use (jasmine/mocha/qunit/...)
+    frameworks: ['ng-scenario'],
 
-reporters = ['dots','junit'];
+    files : [
+      'test/e2e/*.js'
+    ],
 
-junitReporter = {
-  outputFile: 'test_out/e2e.xml',
-  suite: 'e2e'
-};
+    urlRoot : '/__karma__/',
 
-autoWatch = true;
+    reporters : ['dots','junit'],
 
-browsers = ['PhantomJS'];
+    junitReporter : {
+      outputFile: 'test_out/e2e.xml',
+      suite: 'e2e'
+    },
 
-singleRun = false;
+    autoWatch : true,
 
-proxies = {
-  '/': 'http://localhost:8000/'
+    browsers : ['PhantomJS'],
+
+    singleRun : false,
+
+    proxies : {
+      '/': 'http://localhost:8000/'
+    },
+
+    plugins : [
+      'karma-ng-scenario',
+      'karma-phantomjs-launcher',
+      'karma-junit-reporter',
+      'karma-chrome-launcher'
+    ]
+  });
 };

@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <testsuites>
-  <testsuite name="Chrome 27.0 (Mac)" package="e2e" timestamp="2013-06-09T06:21:32" id="0" hostname="Kevins-MacBook-Air.local" tests="2" errors="0" failures="0" time="2.94">
+  <testsuite name="Chrome 35.0.1916 (Mac OS X 10.9.3)" package="e2e" timestamp="2014-05-31T08:50:52" id="0" hostname="Kevins-MacBook-Air.local" tests="2" errors="0" failures="0" time="4.657">
     <properties>
-      <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.110 Safari/537.36"/>
+      <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.114 Safari/537.36"/>
     </properties>
-    <testcase name="should have a greeting - Hello from Kevla" time="2.844" classname="e2e Chrome 27.0 (Mac).my app"/>
-    <testcase name="should have the ability to update yourname." time="0.096" classname="e2e Chrome 27.0 (Mac).my app"/>
+    <testcase name="should have a greeting - Hello from Kevla" time="4.542" classname="e2e Chrome 35.0.1916 (Mac OS X 10.9.3).my app"/>
+    <testcase name="should have the ability to update yourname." time="0.115" classname="e2e Chrome 35.0.1916 (Mac OS X 10.9.3).my app"/>
     <system-out><![CDATA[
 ]]></system-out>
     <system-err/>

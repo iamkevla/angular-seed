@@ -1,12 +1,13 @@
 'use strict';
 
-/* Controllers */
-function TestCtrl($location) {
-	this.location = $location;
-}
+var myApp = angular.module('myApp', []);
 
-function MainCtrl($scope) {
+myApp.controller('TestCtrl', ['$location', function($location){
+  this.location = $location;
+}]);
+
+myApp.controller('MainCtrl',['$scope', function ($scope) {
 	// initialise
 	$scope.greeting = 'Hello from Kevla';
 	$scope.yourname = '';
-}
+}]);

@@ -1,58 +1,65 @@
-// Sample Testacular configuration file, that contain pretty much all the available options
-// It's used for running client tests on Travis (http://travis-ci.org/#!/vojtajina/testacular)
-// Most of the options can be overriden by cli arguments (see testacular --help)
+/*globals module */
+module.exports = function(config) {
+  'use strict';
+  config.set({
+    // base path, that will be used to resolve files and exclude
+    basePath : '../',
 
+    frameworks: ['jasmine'],
 
+    files : [
+      'https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js',
+      'https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-mocks.js',
+      'app/js/app.js',
+      'test/unit/*Spec.js'
+    ],
 
-// base path, that will be used to resolve files and exclude
-basePath = '../';
+    // list of files to exclude
+    exclude : [],
 
-// list of files / patterns to load in the browser
-files = [
-  JASMINE,
-  JASMINE_ADAPTER,
-  'http://code.angularjs.org/1.0.7/angular.min.js',
-  'http://code.angularjs.org/1.0.7/angular-mocks.js',
-  'app/js/app.js',
-  'test/unit/*Spec.js'
-];
+    // use dots reporter, as travis terminal does not support escaping sequences
+    // possible values: 'dots' || 'progress'
+    reporter : ['dots','junit'],
 
-// list of files to exclude
-exclude = [];
+    junitReporter : {
+      outputFile: 'test_out/unit.xml',
+      suite: 'unit'
+    },
 
-// use dots reporter, as travis terminal does not support escaping sequences
-// possible values: 'dots' || 'progress'
-reporter = ['dots','junit'];
+    // web server port
+    port : 9876,
 
-junitReporter = {
-  outputFile: 'test_out/unit.xml',
-  suite: 'unit'
+    // cli runner port
+    runnerPort : 9100,
+
+    // enable / disable colors in the output (reporters and logs)
+    colors : true,
+
+    // level of logging
+    // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
+    logLevel : config.LOG_INFO,
+
+    // enable / disable watching file and executing tests whenever any file changes
+    autoWatch : true,
+
+    // Start these browsers, currently available:
+    // - Chrome
+    // - ChromeCanary
+    // - Firefox
+    // - Opera
+    // - Safari
+    // - PhantomJS
+    browsers : ['PhantomJS'],
+
+    // Auto run tests on start (when browsers are captured) and exit
+    singleRun : false,
+
+    plugins: [
+      // these plugins will be require() by Karma
+      'karma-jasmine',
+      'karma-chrome-launcher',
+      'karma-phantomjs-launcher'
+    ]
+
+  });
 };
-
-// web server port
-port = 9876;
-
-// cli runner port
-runnerPort = 9100;
-
-// enable / disable colors in the output (reporters and logs)
-colors = true;
-
-// level of logging
-// possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
-logLevel = LOG_INFO;
-
-// enable / disable watching file and executing tests whenever any file changes
-autoWatch = true;
-
-// Start these browsers, currently available:
-// - Chrome
-// - ChromeCanary
-// - Firefox
-// - Opera
-// - Safari
-// - PhantomJS
-browsers = ['PhantomJS'];
-
-// Auto run tests on start (when browsers are captured) and exit
-singleRun = false;
